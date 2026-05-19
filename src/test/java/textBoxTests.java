@@ -1,3 +1,6 @@
+import com.codeborne.selenide.Config;
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -6,6 +9,11 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class textBoxTests {
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = "https://demoqa.com";
+    }
     @Test
     void fillFormTestTest() {
         open("https://demoqa.com/text-box"); // - Октрыть сайт демоQA
